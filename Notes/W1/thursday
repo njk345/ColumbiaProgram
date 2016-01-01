@@ -1,0 +1,81 @@
+THURSDAY NOTES
+
+
+MORNING
+_______________________________________
+
+
+Arrays:
+
+    Block of variables of same data type
+    Store in consecutive memory addresses
+    Size is static
+    
+    Declaring Arrays:
+            
+        datatype name[size];
+
+        ex. int x[4];
+            float myArray[19];
+
+        for array of ints, each element is 4 bytes
+
+        access nth element:
+            array[n];
+
+    Initializing Arrays:
+            
+        int n[5] = {1,2,3,4,5}; //array size 5 is filled
+
+        int n[5] = {1}; //0th element is filled, rest are filled by 0's
+
+
+    Strings:
+
+        arrays of chars, where last element is always '\0'
+
+        char s[6] = {'H','e','l','l','o',\0};
+
+        If you want to make string length 5, declare it as length 6
+            --> null byte needs a space
+
+        strcpy(s1,s2):
+            
+
+        strcmp(s1,s2):
+
+        strcat(s1,s2):
+
+        strlen(s):
+            returns length of string not including null byte
+
+        fgets(s,sizeof(s1),stdin):
+            reads string from keyboard, stores in s.
+            counts '\n' as part of the inputted string, so length will be one more
+
+        scanf("%s",s):
+            reads sring from keyboard, stores in s.
+            reads until it sees '\0', and therefore does not include '\n' as part of string.
+            strlen of string read through scanf will be one less than string from fgets
+
+        sscanf(s,"%d",&var):
+  
+
+
+
+
+  AFTERNOON
+  _______________________________________________
+
+  Loops:
+
+    while loops (same as any other language):
+
+    for loops (same, but counter variable must be declared before):
+    ex.
+        int i;
+        for (i = 0; i < 10; i++) {
+            stuff;
+        }
+
+    

@@ -1,0 +1,120 @@
+TUESDAY NOTES
+
+Import non-standard C libraries:
+
+	include "library.h"
+
+Import standard C libraries:
+
+	#include <library.h>
+
+
+
+Global Declarations:
+
+	#include's
+	function main
+	variables
+	statements
+	etc...
+
+Constants:
+
+	#define NAME value
+	ex. #define MAX 100
+
+
+Ints:
+
+	int x = -12;
+	unsigned int y = 15;
+	short x = 2;
+	long x = 20000;
+
+	Memory:
+			
+		short - 2 bytes
+		long - 4 bytes
+		int - 4 bytes
+		signed range = -2^31 -- 2^31
+		unsigned range = 0 -- 2^32
+
+Chars:
+
+	char c = 'w'; ALWAYS SINGLE QUOTES
+	ASCII representation of character in base 2
+	
+	Memory:
+		1 byte (always) 
+
+Floats:
+
+	float f = 3.14
+	
+	Memory: 
+		4 bytes
+
+Doubles:
+	double d = 3.14159
+
+	Memory:
+		8 bytes
+
+
+Overall Memory:
+
+	char = 1 byte
+	int = 2 or 4 bytes
+	unsigned int = 2 or 4 bytes
+	short = 2 bytes
+	long = 4 bytes
+
+Casting Variables:
+
+	float x;
+	int y;
+	y = 3;
+	x = (float) y;
+	--> x = 3, and is now 8 bytes rather than 4
+
+sizeof function:
+
+	return number bytes held in variable inputted
+	int x = 2345;
+	--> sizeof(x) = 4; 
+______________________________________________________________________________________
+
+AFTERNOON
+
+
+printf():
+
+
+	Escape Characters:
+		\n = new line
+		\t = tab
+		\' = single quote
+		\" = double quote
+
+	Format Characters:
+		%d = int
+		%ld = long int
+		%s = string
+		%f = float
+		%c = char
+
+Prefix and Postfix Incrementing:
+
+	x++  --> x = x+1
+	
+	x = y++  -->   sets x to y+1 ONLY THE NEXT TIME Y IS REFERENCED
+	
+	x = ++y  -->   immediately updates y and set x to it
+	
+	ex. int x = 5;
+	    int y = 6;
+
+Order of Operations:
+	
+	prefix increment
+		

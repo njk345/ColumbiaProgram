@@ -1,0 +1,101 @@
+WEDNESDAY NOTES
+________________________
+
+MORNING
+_________________________
+
+
+
+
+Explicit Casting:
+
+	int x = 17;
+	double y = 5;
+	x = (double) x/y;
+	--> x = 3.4
+
+Implicit Casting:
+	
+	(Follows hierarchy)
+	int x = 10;
+	double y = 5.5;
+	x = x+y;
+	--> x = 15   NOT 15.5
+
+	int truncates decimals (not round, truncate)
+	
+
+
+Operators:
+
+	ex.
+	int i, j = 3;
+	i = j+7;
+	i = j/12 + 5;
+	int k = (j + i * 3);
+	printf("%d, %d, %d\n",i, j, k);
+	--> 5, 3, 18
+
+
+Logical Operators:
+
+	AND = &&
+	OR = ||
+	EQUALITY CHECK: ==
+	INEQUALITY CHECK: !=
+	GREATER THAN CHECK: >
+	LESS THAN CHECK: <
+	GREATER THAN OR EQUAL TO CHECK: >=
+	LESS THAN OR EQUAL TO CHECK: <=
+
+Conditional Operators:
+
+	Ternary Operators:
+		(condition)? (true result): (false result);
+		ex. Grade >= 60? printf("Passed\n"): printf("Failed\n");
+
+	
+Bitwise Operators:
+
+	Applied to char, int, short, long
+
+	AND = &
+	OR = |
+	EXOR = ^
+	LEFT-SHIFT = <<
+	RIGHT-SHIFT = >>
+	ONE'S COMPLEMENT = ~	
+
+
+
+Control Flow:
+
+	if statements:
+		if (condition) {
+			statement1;
+			statement2;
+			.
+			.
+			.
+		}
+
+	if-else statments:
+
+		if (condition) {
+			statement;
+		}
+		else {
+			other statement;
+		}
+
+	-if-else statements can be nested
+
+	
+	-if single statement inside if/else, use no curly braces
+
+		if (condition) 
+			only statement;
+
+	
+	switch statements:
+

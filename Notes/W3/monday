@@ -1,0 +1,133 @@
+MONDAY NOTES
+
+MORNING
+____________________________________________________
+
+
+Pointers:
+
+    Pass By Value:
+        -Make local copy of passed variable
+        -Does not affect source variable
+
+    Pass By Reference:
+        -Pass pointer to memory slot of variable
+        -can directly modify the variable (not a copy of it)
+
+    Type:
+
+        -int*
+        -float*
+        -double*
+        -long*
+        -short*
+        -long long*
+        -char*
+        -void*
+
+        void*:
+
+            -can be pointed to variable of any type
+        
+            NULL pointer:
+                -(void*) 0;
+
+            -cannot be dereferenced (must be casted first)
+
+            ex.
+            
+            int i;
+            void *pv;
+
+            pv = &i;
+            printf("%d\n", *pv); //ERROR
+
+
+            printf("%d\n",(int *)pv); //CORRECT
+
+            --> pv must be cast as int, even if it was assigned to variable
+            of type int.
+
+
+            -void * useful as argument to function that takes a pointer,
+            the type of which is specified at run-time
+
+            -void * is returned by malloc, which allocates specified portion
+            of memory and returns a pointer to it.
+
+
+        Pointers To Pointers:
+
+            int x = 3;
+            int *p = &x;
+            int **p2 = &p;
+
+            char* arr[3] = {"Hello", "Wonderful", "World"};
+            char** ptr;
+            ptr = arr;
+
+
+            Multidimensional Array:
+
+                int arr[2][3];
+                int *ptr1[2];
+                int **ptr2[3] = ptr1;
+
+
+
+AFTERNOON
+__________________________________________________________________
+
+
+Structs:
+
+    (*empPtr).salary
+
+    equivalent to:
+        
+    empPtr -> salary
+
+    Pointers To Structs:
+
+        StructName *ptr = &structinstance;
+
+
+Memory Allocation:
+
+    -Automatic
+
+    -Static
+
+    -Dynamic
+
+        void* malloc(size_t numBytes);
+
+            -Allocates numBytes in memory (the heap)
+            -The bytes are uninitialized
+            -return void* pointer to beginning of allocated memory area
+
+            ex.
+
+            int* myArr = (int*) malloc(10 * sizeof(int));
+
+            //reserves in memory (10 * sizeof(int)) bytes
+            //allocates 40 bytes (enough to hold 10 ints)
+
+        void* calloc(size_t numElements, size_t size);
+
+            -Same as malloc, but initializes allocated bytes to 0.
+
+            ex.
+
+            int* myZeroArray = (int*) calloc(10 * sizeof(int));
+
+            //reserves 40 bytes in memory, and sets all bytes to 0.
+
+        void* realloc(void *ptr, size_t size);
+
+            -Takes a pointer to spot in memory, adds size more bytes to
+            the previous allocation (helpful in resizeable data-structures)
+
+        void free(void *ptr);
+
+            -Frees the allocated memory area pointed to by ptr

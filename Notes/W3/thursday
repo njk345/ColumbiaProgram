@@ -1,0 +1,50 @@
+THURSDAY NOTES
+
+MORNING
+_________________________________________________
+
+
+Files and Streams:
+
+
+    -C views each file as sequence of bytes until EOF marker seen.
+    -EOF = End of File
+
+    File Variables:
+
+        FILE *file_name;  //declares a file
+
+    Open File:
+
+        file_name = fopen(file_name, mode);
+
+        Modes:
+            -r = read
+            -w = write
+            -a = append
+            -b = binary
+            -r+ = read and write
+            -w+ - read and write, fileName created if didn't exist
+
+        fopen() returns NULL if file not found
+
+    Close File:
+
+        fclose(file_name);
+
+        -returns 0 on success
+        -returns non-zero on error
+
+    Read Functions:
+
+        fgetc(file_name);
+
+        -read single character, returns EOF if end of file reached
+
+        fgets(char *string, size_t size, File *fvar);
+
+        -read string, one line at a time (can be used for any stream)
+
+        fscanf(File *file, "....format stuff", &var...);
+
+        -reads one line in formatted manner

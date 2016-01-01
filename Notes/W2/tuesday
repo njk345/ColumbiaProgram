@@ -1,0 +1,85 @@
+TUESDAY NOTES
+
+
+MORNING
+____________________________________
+
+
+Custom Header Files:
+
+    #include "mylibrary.h"
+
+    --> includes library of custom functions
+    --> Goal: Reuse Functions
+
+Header Files:
+
+    By default, C includes no function libraries
+    Add only the ones needed in the program,
+    in order to save memory and make the executable smaller.
+
+Variable Storage Class:
+
+    the following keywords put simply before variable type:
+
+    ex. static double pi = 3.14159
+    ex. register int x;
+    ex. extern int y;
+
+    auto:
+        default storage class for all local variables
+        storage automatically created/reserved upon function call
+        variable dies when function terminates
+
+    static:
+        exist as long as program is running
+        can only be referred to when execution is in block in which
+        they are defined
+
+        For example, if variable is changed first time function
+        is called, and you call it again, the changed value from 
+        the first call will continue to be stored and the program
+        will change the changed value from the first call.
+
+    extern:
+        denotes variable declared/initialized in other file
+
+    register:
+        denotes variable that is heavily used and should be kept
+        in machine register to increase speed and efficiency
+
+        this is a bit of a hack on gcc, and is not advisable
+        register is usually only for reserved variables
+
+Scope:
+
+
+    File Scope:
+        Things declared outside all of program's blocks
+        ex. #define PI 3.14
+        
+    Function Scope:
+        
+    Block Scope:
+
+
+AFTERNOON
+___________________________________________________
+
+
+
+Recursion:
+
+    Using function that calls itself to solve subproblems same form as initial problem
+
+
+    int factorial (int n) {
+        if (n == 0) return 1;
+        return n * factorial(n-1);
+    }
+
+    1. Identify Base Case
+    2. Find Algorithm/Formula to solve subproblems
+
+
+

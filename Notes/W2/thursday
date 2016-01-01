@@ -1,0 +1,64 @@
+THURSDAY NOTES
+
+MORNING
+______________________________________________________
+
+
+Pointers:
+
+
+    * operator: "dereference operator"
+        
+        int x;
+        x = 3;
+
+        int *y;
+        y = &a;
+
+        dataType *ptrName;
+        ptrName = &varName; //ptrName is pointer to other variable's address
+
+
+        pointer points to 0 or NULL (latter preferred), or to address
+
+        pointer to address:
+            points to beginning of memory spaces containing the variable
+            pointed at.
+
+        ex. 
+        int x = 3;
+
+        int *ptrx = &x
+        *ptrx = 5; //sets x to 5
+
+    & operator: "reference operator"
+
+        "Address" in memory of variable that comes after it
+
+    * and & are opposites
+
+    
+
+
+    ex.
+
+    int i = 6;
+    int j;
+    int *p;
+     
+    p = &i; //p points to i, which is 6
+    j = *p; //j equals contents of mem. at address of i, which is pointed to by p
+    printf("%d %d\n", i, j);
+    *p = 4;
+    printf("%d %d\n", i, j);
+
+
+
+
+    char *name = "I am a string";
+    --> Creates pointer to a char array that is initialized in same line.
+
+
+    format specifier for pointer = %p
+
+

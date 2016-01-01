@@ -1,0 +1,25 @@
+TUESDAY NOTES
+
+MORNING
+_________________________________________________
+
+
+Linked Lists:
+
+    Struct With member that is pointer to another struct, etc.
+
+    Ends with a struct whose pointer points to NULL, not another struct
+
+    First struct in list is called "head"
+
+    List must be traversed from head to tail over every element, when accessing an
+    arbitrary index.
+
+
+    Insert New Node:
+
+        struct Node *newptr;
+
+        newptr = (struct Node *) malloc(sizeof(struct Node));
+
+        //notice how malloc uses 1 * sizeof(struct Node);

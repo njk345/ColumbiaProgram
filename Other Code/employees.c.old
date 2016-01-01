@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
+
+typedef struct Node {
+  char* name;
+  char* surname;
+  int phone;
+  int salary;
+  struct Node *next;
+} node;
+
+void giveData(node *n) {
+  n -> name = (char*) malloc(20);
+  n -> surname = (char*) malloc(20);
+  
+  strcpy(n -> name, "Joe");
+  strcpy(n -> surname, "Smith");
+  
+  n -> phone = rand() % 10000;
+  n -> salary = (rand() % 500) + 50;
+}
+
+node* makeNode() {
+ node *n = (node *) malloc(sizeof(node));
+ giveData(n);
+ n -> next = NULL;
+ return n;
+}
+
+void addNode(node *n) {
+  n -> next = makeNode();
+}
+
+int main (void) {
+  srand(time(NULL));
+  node *head = makeNode();
+  node *conductor = head; //start the counter at the head
+  node *tail = head;
+  
+  bool again = false;
+  do {
+    
+    int choice;
+    do {
+      printf("(1) Add Employee (2) Print Employee List: ");
+      scanf("%d", &choice);
+    } while (choice != 1 && choice != 2);
+
+    if (choice == 1) {
+      tail -> next = makeNode();
+      tail = tail -> next;
+      printf("Enter Name and Surname: ");
+      scanf("%s %s", tail -> name, tail -> surname);
+      printf("Enter Phone Extension (####): ");
+      scanf("%d", &(tail -> phone));
+      printf("Enter Salary: ");
+      scanf("%d", &(tail -> salary));
+      printf("%s %s Successfully Added To System.\n", tail -> name, tail -> surname);
+    }
+    else {
+      while (conductor -> next != NULL) {
+        printf("Name: %s || Surname: %s || Phone: %d || Salary: %dK\n", conductor->name, conductor->surname, conductor->phone, conductor->salary);
+        conductor = conductor->next;
+      }
+      printf("Name: %s || Surname: %s || Phone: %d || Salary: %dK\n", conductor->name, conductor->surname, conductor->phone, conductor->salary);
+      conductor = head;
+    }
+    printf("Continue? (y/n): ");
+    char response;
+    scanf(" %c", &response);
+    response == 'y' ? (again = true) : (again = false);
+  }
+  while (again);
+}

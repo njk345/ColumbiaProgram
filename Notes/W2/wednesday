@@ -1,0 +1,118 @@
+WEDNESDAY NOTES
+
+MORNING
+_____________________________________________________
+
+
+Structs:
+
+    collections of related variables under one name
+    can be variables of different types!
+
+    like objects, just without the methods
+
+
+    Defining:
+
+        struct stuctName {
+            fieldType fieldNameval1;
+            fieldType fieldNameval2;
+            .
+            .
+            .
+        };      <--- SEMICOLON!!
+
+
+    New Variables:
+
+        struct student st1,st2;
+
+    Referencing Struct Variables:
+
+        structname.var = 15;
+        --> use dot syntax, like in java
+
+    Variables of struct type cannot be compared w/ == or != or > or < , etc.
+
+    Initializing Struct Variables:
+
+        Strings:
+            struct student {
+                char name[30];
+                int age;
+                double grade;
+            };
+
+            name = "Bob";    <-- CANNOT do that
+
+            strcpy(name,"Bob"); <-- YES
+
+        Numbers:
+            age = 30;
+            grade = 86.5;
+            //initialize normally
+
+    Initialize Literally:  (CANT DEFINE LIKE THIS)
+
+        struct student st1 = {"mike",15, 87.5};
+        
+
+    Cannot compare with == or != b/c struct variables not necessarily
+    stored in consecutive memory slots.
+    
+    They can have byte gaps, which don't fall in the same places
+    in the numbers, resulting in bad comparisons.
+
+
+
+    Example:
+
+
+    #include <stdio.h>
+
+
+    struct stud {
+        int roll;
+        char name[10];
+        int marks;
+    };
+
+    int main () {
+        int size;
+        struct stud s; //initializing instance of the stud struct
+        size = sizeof(s);
+        printf("%d",size);
+    }
+
+    //program would not print 18, but 20
+    //b/c name[10] stops halfway through a 4 byte row of memory, and
+    //the other two bytes are skipped, to give marks a whole sequential 
+    //4 bytes.
+
+
+    Typedef:
+
+        
+
+
+    Array of structs:
+
+        student class[100];
+
+        strcpy(class[98].name, "Mike);
+        class[98].age = 21;
+        class[98].grade = 56.0;
+
+        class[0] = class[98];
+
+    Functions w/ structs:
+
+        structs can be passed into or return by functions
+
+    To pass Structs:
+
+        call by reference:
+            pass its address
+            pass reference to it
+
+    

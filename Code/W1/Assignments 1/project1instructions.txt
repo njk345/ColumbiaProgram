@@ -1,0 +1,66 @@
+/********************************************************************/
+	
+		Data analysis: customer satisfaction survey
+
+/********************************************************************/
+Write a program that computes the median, mean and mode for the 
+following scenario:
+You are given the results of a customer satisfaction survey of 
+99 people in an array named:
+
+	unsigned int responses[99];  
+
+Each response is a number from 1..9.
+
+For example, response[82]=5, means that the customer with id=82 has 
+scored the service provided with grade 5.
+
+1. For testing your code, you can create a sample responses array 
+by generating 99 random numbers x (where 1<x<9) using the rand() 
+function.
+
+2. You need to create functions 
+	mean(),   /* Calculates the average of all values in responses[]*/
+ 	median(), /* Median is the middle value of all 
+		     the responses if the values are sorted in 
+		     ascending/descending order.
+		     Hint: You need to put the elements of the array in 
+		           ascending order to be able to find the median.
+			   Create a function for that!                 */
+
+	mode()   /*  The value that occurs most frequently among the 
+		     responses*/
+
+4. Specifically in the case of mode, apart from the result, 
+your program should also print out the histogram of the frequency 
+for all the available responses (1..9).
+
+Eg.
+
+/***************
+     MODE
+***************/
+Response       Frequency      Histogram
+   1              5 		*****
+   2              7		*******
+   3              3             ***
+
+etc.
+
+5. Your code needs to be properly commented and follow the proper C 
+program structure we have discussed in class. It should inlcude also the
+good programming practices we have been talking about.
+You should include a README.txt describing how to run your code,
+if it takes any input and a small summary (if needed)
+of what your code does. Alternatively, you can comment your code properly.
+Finally, the output should be clearly formatted such as 
+
+/**********
+    MEAN
+**********/
+
+- What mean is?
+
+- The result!
+
+
